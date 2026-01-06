@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 # Usa il percorso relativo per funzionare anche su Render
 import os
 data_path = os.path.join(os.path.dirname(__file__), 'domande_fisio.csv')
-df = pd.read_csv(data_path)
+df = pd.read_csv(data_path, sep=';')
 
 # Prepara i dati
 summary = df.groupby(['Macro-Area', 'Argomento Principale']).size().reset_index(name='Conteggio')
